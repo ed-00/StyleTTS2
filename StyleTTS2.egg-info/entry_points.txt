@@ -1,0 +1,2 @@
+[console_scripts]
+styletts2 = style_tts2_pipeline:main
