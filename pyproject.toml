@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "StyleTTS2"
+version = "0.0.1"
+description = "StyleTTS2 text-to-speech synthesis system"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+dependencies = [
+    "SoundFile",
+    "torchaudio",
+    "munch",
+    "torch",
+    "pydub",
+    "pyyaml",
+    "librosa",
+    "nltk",
+    "matplotlib",
+    "accelerate",
+    "transformers",
+    "einops",
+    "einops-exts",
+    "tqdm",
+    "typing",
+    "typing-extensions",
+]
+
+[tool.setuptools]
+package-dir = {'' = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["tests*"]
+
+[project.scripts]
+styletts2 = "style_tts2_pipeline:main"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]} 
